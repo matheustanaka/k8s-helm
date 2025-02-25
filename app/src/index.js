@@ -17,10 +17,6 @@ app.use(
 
 validateDbConnection();
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
 app.get("/books", GetBooks);
 app.post("/book", InsertBook);
 
