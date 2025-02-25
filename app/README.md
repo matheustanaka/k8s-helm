@@ -1,11 +1,9 @@
 # My Books
 
-[] - Criar Livro
-[] - Atualizar Livro
-[] - Deletar Livro
-[] - Ler Livro
-[] - Conectar com postgres
-[] - Transformar em container
+[x] - Criar Livro
+[x] - Ler Livro
+[x] - Conectar com postgres
+[x] - Transformar em container
 
 # Dados do Livro
 
@@ -13,11 +11,11 @@ Nome
 Autor
 avaliação
 
-docker run --name postgres \
+docker run --name postgres --network=helm \
   -e POSTGRES_USER=me \
   -e POSTGRES_PASSWORD=senha123 \
   -e POSTGRES_DB=api \
-  -v /home/mvthexz/dev/repos/crud/scripts:/docker-entrypoint-initdb.d \
+  -v /home/mvthexz/dev/repos/k8s-helm-crud/app/scripts:/docker-entrypoint-initdb.d \
   -p 5432:5432 \
   -d postgres
 
