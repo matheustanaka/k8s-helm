@@ -1,0 +1,17 @@
+# Default values for books-api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+api:
+  name: books-api
+  label:
+    app: books-api
+  
+  image:
+    name: app-node-helm
+    tag: latest
+    imagePullPolicy: Never
+    port: 3000
+
