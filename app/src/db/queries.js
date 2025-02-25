@@ -39,9 +39,11 @@ export const InsertBook = async (req, res) => {
     const { name, author, description } = req.body;
 
     const book = await pool.query(
-      "INSERT INTO books (name, author, description) VALUES ($1, $2, $3)",
+      "INSERT INTO books (name, author, description) VALUES ($1, $2, $3) RETURNING *",
       [name, author, description],
     );
+
+    console.log(book.rows[0]);
 
     res.status(200).json({
       message: "Successfully inserted book!",
