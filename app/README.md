@@ -4,6 +4,8 @@
 [x] - Ler Livro
 [x] - Conectar com postgres
 [x] - Transformar em container
+[] - Criar o helm da aplicação
+[] - Mover as env vars para mount secret
 
 # Dados do Livro
 
